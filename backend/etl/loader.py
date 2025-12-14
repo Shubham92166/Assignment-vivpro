@@ -74,6 +74,9 @@ def load_playlist_etl(json_path: str, session) -> None:
             rating=None,
         )
 
+    try:
         session.add(song)
-
-    session.commit()
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise

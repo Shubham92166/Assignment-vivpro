@@ -18,4 +18,4 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-app.include_router(songs_router)
+app.include_router(songs_router, prefix="/api/v1")

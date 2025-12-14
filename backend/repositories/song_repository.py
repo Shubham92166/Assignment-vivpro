@@ -28,7 +28,7 @@ class SongRepository:
         Returns:
             list[Song]: List of Song objects.
         """
-        query = select(Song).offset(skip).limit(limit)
+        query = select(Song).order_by(Song.id.asc()).offset(skip).limit(limit)
         response = await self.db.execute(query)
         return response.scalars().all()
 
