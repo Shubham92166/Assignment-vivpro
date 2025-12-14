@@ -1,5 +1,5 @@
 from sqlalchemy import select, update
-from models.song import Song
+from backend.models.song import Song
 
 class SongRepository:
     """

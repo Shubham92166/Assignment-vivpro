@@ -1,3 +1,6 @@
 .vscode
 .venv
-config
+.env
+*.db
+*.pyc
+__pycache__

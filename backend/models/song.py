@@ -1,10 +1,11 @@
 from sqlalchemy import Column, String, Float, Integer
-#from app.db.base import Base
+from backend.db.base import Base
 
 class Song(Base):
     __tablename__ = "songs"
 
-    id = Column(Integer, primary_key=True, index=True, autoincrement= True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    external_id = Column(String, unique=True, index=True)
     title = Column(String, index=True)
     title_lower = Column(String, index=True)
 

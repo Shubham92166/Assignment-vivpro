@@ -1,4 +1,4 @@
-from repositories.song_repository import SongRepository
+from backend.repositories.song_repository import SongRepository
 
 class SongService:
     """
@@ -40,7 +40,7 @@ class SongService:
         """
         return await self.song_repository.get_song_by_title(song_title=song_title)
     
-    async def rate_song(self, rating: int, song_id: int):
+    async def rate_song(self, song_id: int, rating: int):
         """
         Update the rating of a song.
 
