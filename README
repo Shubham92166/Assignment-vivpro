@@ -1,0 +1,52 @@
+# 🎵 Songs API – FastAPI + PostgreSQL
+
+A production-ready backend service built using **FastAPI**, **PostgreSQL**, and **SQLAlchemy (Async)**.  
+The project supports song listing, searching, rating, ETL-based data loading, migrations via Alembic, and unit testing.
+
+---
+
+## 🚀 Features
+
+- List songs with pagination (skip & limit)
+- Search songs by title
+- Rate a song (1–5)
+- Async PostgreSQL integration
+- Alembic migrations
+- One-time ETL loader for JSON data
+- Unit tests (service + API)
+- Clean layered architecture (controller / service / model)
+
+---
+
+## 🧱 Tech Stack
+
+- **FastAPI**
+- **PostgreSQL**
+- **SQLAlchemy (Async)**
+- **Alembic**
+- **Pydantic v2**
+- **pytest + pytest-asyncio**
+
+
+Quick links
+- App entry: backend/main.py
+- Settings: backend/config/settings.py
+- Controller: backend/controller/songs.py
+- Service: backend/services/song_service.py
+- Repository: backend/repositories/song_repository.py
+- Pydantic models: backend/schemas/song.py
+- ETL: backend/etl/loader.py (if present)
+- Env example: backend/.env
+- Alembic: alembic.ini and migrations/ (or alembic/)
+
+Requirements
+- Python 3.10+ (3.13 is OK)
+- PostgreSQL
+- Recommended packages: fastapi, uvicorn[standard], sqlalchemy[asyncio], asyncpg, psycopg[binary], alembic, pydantic
+
+Setup (Windows PowerShell)
+```powershell
+python -m venv .venv
+[Activate.ps1](http://_vscodecontentref_/0)
+pip install fastapi uvicorn sqlalchemy[asyncio] asyncpg psycopg[binary] alembic pydantic python-dotenv
+pip freeze > [requirements.txt](http://_vscodecontentref_/1)
