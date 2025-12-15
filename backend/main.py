@@ -13,7 +13,7 @@ async def lifespan(app: FastAPI):
     await engine.dispose()
 
 app = FastAPI(
-    title="Song Service - MVC + Prod features",
+    title="Backend Service - Songs",
     lifespan=lifespan
 )
 

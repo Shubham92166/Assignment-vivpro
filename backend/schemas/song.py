@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional
 
 class SongView(BaseModel):
@@ -15,3 +15,9 @@ class SongView(BaseModel):
 
     class Config:
         orm_mode = True
+
+class SongSearchParams(BaseModel):
+    title: str = Field(..., min_length=1)
+
+class SongRateRequest(BaseModel):
+    rating: int = Field(..., ge=1, le=5)
