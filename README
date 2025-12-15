@@ -1,11 +1,11 @@
-# 🎵 Songs API – FastAPI + PostgreSQL
+# Songs API – FastAPI + PostgreSQL
 
 A production-ready backend service built using **FastAPI**, **PostgreSQL**, and **SQLAlchemy (Async)**.  
 The project supports song listing, searching, rating, ETL-based data loading, migrations via Alembic, and unit testing.
 
 ---
 
-## 🚀 Features
+## Features
 
 - List songs with pagination (skip & limit)
 - Search songs by title
@@ -15,10 +15,11 @@ The project supports song listing, searching, rating, ETL-based data loading, mi
 - One-time ETL loader for JSON data
 - Unit tests (service + API)
 - Clean layered architecture (controller / service / model)
+- Request ID for tracebility
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - **FastAPI**
 - **PostgreSQL**
