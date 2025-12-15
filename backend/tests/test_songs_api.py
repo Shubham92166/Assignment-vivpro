@@ -12,14 +12,18 @@ def test_search_song_not_found(client):
 
 
 def test_rate_song_api_success(client):
-    response = client.post(f"{API_PREFIX}/songs/1/rate?rating=4")
+    response= client.post("/api/v1/songs/1/rate", json={"rating": 4})
     assert response.status_code == 200
     assert response.json()["rating"] == 4
 
 
 def test_rate_song_invalid_rating(client):
-    response = client.post(f"{API_PREFIX}/songs/1/rate?rating=10")
+    response = client.post(
+    "/api/v1/songs/1/rate",
+    json={"rating": 10}
+    )
     assert response.status_code == 422
+
 
 
 def test_rate_song_missing_rating(client):
@@ -28,5 +32,8 @@ def test_rate_song_missing_rating(client):
 
 
 def test_rate_song_not_found(client):
-    response = client.post(f"{API_PREFIX}/songs/9999/rate?rating=4")
+    response = client.post(
+    "/api/v1/songs/999/rate",
+    json={"rating": 4}
+    )
     assert response.status_code == 404
